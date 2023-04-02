@@ -6,7 +6,7 @@ namespace Rehor\Datastructure\types\Queue\interfaces;
 
 interface QueueInterface
 {
-    public function enqueue(): int;
+    public function enqueue(mixed $item): void;
 
     public function dequeue(): mixed;
 }

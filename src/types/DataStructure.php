@@ -16,7 +16,7 @@ class DataStructure extends Structure
         $this->structureType = $structureType;
     }
 
-    public function put(string $item): self
+    public function put(mixed $item): self
     {
         if (!is_null($this->structureType)) {
             get_class($this->structureType) === 'Rehor\Datastructure\types\Stack\Stack' ? $this->structureType->push($item) : $this->structureType->enqueue($item);

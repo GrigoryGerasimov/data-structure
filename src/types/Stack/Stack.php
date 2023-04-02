@@ -34,6 +34,6 @@ final class Stack implements StackInterface
 
     public function isStackEmpty(): bool
     {
-        return $this->last === null;
+        return is_null($this->last);
     }
 }
