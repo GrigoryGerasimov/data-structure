@@ -1,0 +1,15 @@
+{
+    "name": "grigorygerasimov/datastructure",
+    "description": "data structure in php",
+    "autoload": {
+        "psr-4": {
+            "Rehor\\Datastructure\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Grigory Gerasimov"
+        }
+    ],
+    "require": {}
+}
