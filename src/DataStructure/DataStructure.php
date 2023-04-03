@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Rehor\Datastructure\types;
+namespace Rehor\Datastructure\DataStructure;
 
 use Rehor\Datastructure\types\Stack\Stack;
 use Rehor\Datastructure\types\Queue\Queue;

@@ -6,7 +6,7 @@ namespace Rehor\Datastructure\types\Stack;
 
 use Rehor\Datastructure\types\Stack\interfaces\StackInterface;
 use Rehor\Datastructure\types\StructureType;
-use Rehor\Datastructure\Node;
+use Rehor\Datastructure\Node\Node;
 
 final class Stack extends StructureType implements StackInterface
 {
