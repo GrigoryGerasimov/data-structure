@@ -6,7 +6,7 @@ namespace Rehor\Datastructure\types\Queue;
 
 use Rehor\Datastructure\types\Queue\interfaces\QueueInterface;
 use Rehor\Datastructure\types\StructureType;
-use Rehor\Datastructure\Node;
+use Rehor\Datastructure\Node\Node;
 
 final class Queue extends StructureType implements QueueInterface
 {

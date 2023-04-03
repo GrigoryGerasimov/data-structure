@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Rehor\Datastructure\types;
 
-use Rehor\Datastructure\Node;
+use Rehor\Datastructure\Node\Node;
 
 abstract class StructureType
 {

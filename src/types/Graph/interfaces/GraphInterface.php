@@ -6,11 +6,11 @@ namespace Rehor\Datastructure\types\Graph\interfaces;
 
 interface GraphInterface
 {
-    public function addNodes(string $node): self;
+    public function addNode(string $node): self;
 
-    public function addEdges(string $node1, string $node2, string $length): self;
+    public function addEdge(string $node1, string $node2, int $length): self;
 
-    public function getNodes(): ?iterable;
+    public function getNode(): ?iterable;
 
-    public function getEdges(string $node1): ?iterable;
+    public function getEdge(string $node1): ?iterable;
 }

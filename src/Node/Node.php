@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Rehor\Datastructure;
+namespace Rehor\Datastructure\Node;
 
 class Node
 {
