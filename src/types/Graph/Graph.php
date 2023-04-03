@@ -32,7 +32,7 @@ class Graph implements GraphInterface
 
     public function getNode(): ?iterable
     {
-        if (is_null($this->edges) || !count($this->edges)) {
+        if ($this->isEmpty($this->edges)) {
             return null;
         }
 
@@ -43,12 +43,28 @@ class Graph implements GraphInterface
 
     public function getEdge(string $node1): ?iterable
     {
-        if (!isset($this->edges[$node1]) || !count($this->edges[$node1])) {
+        if ($this->isEmpty($this->edges[$node1])) {
+            return null;
+        }
+
+        foreach($this->edges[$node1] as $node2 => $length) {
+            yield $node2;
+        }  
+    }
+
+    public function getDistance(string $node1): ?iterable
+    {
+        if ($this->isEmpty($this->edges[$node1])) {
             return null;
         }
 
         foreach($this->edges[$node1] as $node2 => $length) {
             yield 'Distance between '.$node1.' and '.$node2.' makes '.$length;
         }
+    }
+
+    public function isEmpty(mixed $elem): bool
+    {
+        return !isset($elem) || !count($elem);
     }
 }

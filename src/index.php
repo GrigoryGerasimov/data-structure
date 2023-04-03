@@ -12,6 +12,7 @@ use Rehor\Datastructure\DataStructure\DataStructure;
 use Rehor\Datastructure\types\Queue\Queue;
 use Rehor\Datastructure\types\Stack\Stack;
 use Rehor\Datastructure\types\Graph\Graph;
+use Rehor\Datastructure\types\Traverser;
 
 use function Rehor\Datastructure\utils\display;
 
@@ -42,7 +43,14 @@ foreach($queue->getAll() as $currentQueueItem) {
 echo '<hr/>';
 
 foreach($graph->getNode() as $node) {
-    foreach($graph->getEdge($node) as $nodeEdge) {
+    foreach($graph->getDistance($node) as $nodeEdge) {
         display($nodeEdge);
     }
 }
+
+$traverser = new Traverser($graph);
+$traverser->traverseRecursive('C');
+display($traverser->pathRecur);
+
+$traversedPath = $traverser->traverseIterative('C', new DataStructure(new Stack()));
+display($traversedPath);
