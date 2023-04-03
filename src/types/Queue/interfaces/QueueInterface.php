@@ -9,4 +9,6 @@ interface QueueInterface
     public function enqueue(mixed $item): void;
 
     public function dequeue(): mixed;
+
+    public function isQueueEmpty();
 }

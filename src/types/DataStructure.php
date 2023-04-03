@@ -25,12 +25,22 @@ class DataStructure extends Structure
         return $this;
     }
 
-    public function get(): mixed
+    public function getOne(): mixed
     {
         if (is_null($this->structureType)) {
             return null;
         }
 
         return get_class($this->structureType) === 'Rehor\Datastructure\types\Stack\Stack' ? $this->structureType->pop() : $this->structureType->dequeue();
+    }
+
+    public function getAll(): iterable
+    {
+        $currentNode = $this->structureType->getFirst();
+
+        while (!is_null($currentNode)) {
+            yield $currentNode->getItem();
+            $currentNode = $currentNode->getNext();
+        }
     }
 }

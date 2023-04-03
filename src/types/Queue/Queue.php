@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Rehor\Datastructure\types\Queue;
 
 use Rehor\Datastructure\types\Queue\interfaces\QueueInterface;
-
+use Rehor\Datastructure\types\StructureType;
 use Rehor\Datastructure\Node;
 
-final class Queue implements QueueInterface
+final class Queue extends StructureType implements QueueInterface
 {
     private ?Node $last;
     private ?Node $head;
@@ -47,4 +47,9 @@ final class Queue implements QueueInterface
     {
         return is_null($this->head);
     }
+
+    public function getFirst(): ?Node
+    {
+        return !$this->isQueueEmpty() ? $this->head : null;
+    } 
 }

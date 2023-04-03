@@ -9,4 +9,6 @@ interface StackInterface
     public function push(mixed $item): void;
 
     public function pop(): mixed;
+
+    public function isStackEmpty(): bool;
 }

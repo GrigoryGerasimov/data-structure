@@ -5,9 +5,10 @@ declare(strict_types=1);
 namespace Rehor\Datastructure\types\Stack;
 
 use Rehor\Datastructure\types\Stack\interfaces\StackInterface;
+use Rehor\Datastructure\types\StructureType;
 use Rehor\Datastructure\Node;
 
-final class Stack implements StackInterface
+final class Stack extends StructureType implements StackInterface
 {
     private ?Node $last;
 
@@ -35,5 +36,10 @@ final class Stack implements StackInterface
     public function isStackEmpty(): bool
     {
         return is_null($this->last);
+    }
+
+    public function getFirst(): ?Node
+    {
+        return !$this->isStackEmpty() ? $this->last : null;
     }
 }
