@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Rehor\Datastructure\types;
+namespace Rehor\Datastructure\utils;
 
 function display(mixed $view): void
 {

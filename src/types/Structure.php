@@ -8,5 +8,7 @@ abstract class Structure
 {
     abstract protected function put(string $item): self;
 
-    abstract protected function get(): mixed;
+    abstract protected function getOne(): mixed;
+
+    abstract protected function getAll(): iterable;
 }
