@@ -8,11 +8,11 @@ abstract class Structure
 {
     abstract protected function put(string $item): self;
 
-    abstract protected function getOne(): mixed;
+    abstract protected function getOne();
 
     abstract protected function getAll(): iterable;
 
-    abstract protected function contains(mixed $item): bool;
+    abstract protected function contains($item): bool;
 
     abstract protected function isEmpty(): bool;
 }

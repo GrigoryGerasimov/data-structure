@@ -6,16 +6,16 @@ namespace Rehor\Datastructure\Node;
 
 class Node
 {
-    protected mixed $item;
+    protected $item;
     protected ?Node $next;
 
-    public function __construct(mixed $item, ?Node $next = null)
+    public function __construct($item, ?Node $next = null)
     {
         $this->item = $item;
         $this->next = $next;
     }
 
-    public function getItem(): mixed
+    public function getItem()
     {
         return $this->item;
     }

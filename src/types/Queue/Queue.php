@@ -19,27 +19,34 @@ final class Queue extends StructureType implements QueueInterface
         $this->head = null;
     }
     
-    public function enqueue(mixed $item): void
+    public function enqueue($item): void
     {
         $node = new Node($item);
 
         if ($this->isQueueEmpty()) {
+            
             $this->head = $node;
             $this->last = $this->head;
+            
         } else {
+            
             $this->last->setNext($node);
             $this->last = $node;
+            
         }
     }
 
-    public function dequeue(): mixed
+    public function dequeue()
     {
         if ($this->isQueueEmpty()) {
+            
             return null;
+            
         }
 
         $item = $this->head->getItem();
         $this->head = $this->head->getNext();
+        
         return $item;
     }
 

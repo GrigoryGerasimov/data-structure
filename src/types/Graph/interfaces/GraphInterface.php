@@ -13,4 +13,6 @@ interface GraphInterface
     public function getNode(): ?iterable;
 
     public function getEdge(string $node1): ?iterable;
+    
+    public function getDistance(string $node1): ?iterable;
 }

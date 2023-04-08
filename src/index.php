@@ -13,6 +13,7 @@ use Rehor\Datastructure\types\Queue\Queue;
 use Rehor\Datastructure\types\Stack\Stack;
 use Rehor\Datastructure\types\Graph\Graph;
 use Rehor\Datastructure\types\Traverser;
+use Rehor\Datastructure\Dijkstra\Dijkstra;
 
 use function Rehor\Datastructure\utils\display;
 
@@ -31,20 +32,27 @@ $graph->addEdge('A', 'B', 2)->addEdge('A', 'C', 3)->addEdge('A', 'D', 6)
     ->addEdge('F', 'G', 8);
 
 foreach($stack->getAll() as $currentStackItem) {
+    
     display($currentStackItem);
+    
 }
 
 echo '<hr/>';
 
 foreach($queue->getAll() as $currentQueueItem) {
+    
     display($currentQueueItem);
+    
 }
 
 echo '<hr/>';
 
 foreach($graph->getNode() as $node) {
+    
     foreach($graph->getDistance($node) as $nodeEdge) {
+        
         display($nodeEdge);
+        
     }
 }
 
@@ -54,3 +62,6 @@ display($traverser->pathRecur);
 
 $traversedPath = $traverser->traverseIterative('C', new DataStructure(new Stack()));
 display($traversedPath);
+
+$dijkstra = new Dijkstra($graph);
+display($dijkstra->getShortestTraversedPath('A', 'G'));
