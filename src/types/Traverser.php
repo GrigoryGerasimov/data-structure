@@ -25,9 +25,13 @@ class Traverser
         $this->pathRecur[$node] = true;
 
         if ($this->graph->getNode()) {
+            
             foreach($this->graph->getNode() as $edgeNode) {
+                
                 if (!key_exists($edgeNode, $this->pathRecur)) {
+                    
                     $this->traverseRecursive($edgeNode);
+                    
                 }
             }
         }
@@ -39,20 +43,21 @@ class Traverser
         $stru->put($node);
 
         while (!$stru->isEmpty()) {
-
+            
             $currentNode = $stru->getOne();
             $this->pathIter[$currentNode] = true;
 
-            foreach($this->graph->getEdge($currentNode) as $nextNode) {
-
-            if (!key_exists($nextNode, $this->pathIter)) {
-                if(!$stru->contains($nextNode)) {
-                    $stru->put($nextNode);
+            foreach($this->graph->getEdge($currentNode) as $nextNode => $length) {
+                
+                if (!key_exists($nextNode, $this->pathIter)) {
+                    
+                    if(!$stru->contains($nextNode)) {
+                        
+                        $stru->put($nextNode);
+                    }
                 }
             }
         }
-        }
-        
 
         return $this->pathIter;
     }

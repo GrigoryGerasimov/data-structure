@@ -6,9 +6,9 @@ namespace Rehor\Datastructure\types\Stack\interfaces;
 
 interface StackInterface
 {
-    public function push(mixed $item): void;
+    public function push($item): void;
 
-    public function pop(): mixed;
+    public function pop();
 
     public function isStackEmpty(): bool;
 }

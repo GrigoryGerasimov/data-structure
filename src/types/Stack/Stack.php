@@ -17,19 +17,22 @@ final class Stack extends StructureType implements StackInterface
         $this->last = null;
     }
 
-    public function push(mixed $item): void
+    public function push($item): void
     {
         $this->last = new Node($item, $this->last);
     }
 
-    public function pop(): mixed
+    public function pop()
     {
         if ($this->isStackEmpty()) {
+            
             return null;
+            
         }
 
         $item = $this->last->getItem();
         $this->last = $this->last->getNext();
+        
         return $item;
     }
 
